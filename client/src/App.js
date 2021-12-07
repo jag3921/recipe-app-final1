@@ -1,35 +1,43 @@
 import React from 'react';
+import axios from "axios";
 import './App.css';
 
 function App() {
   const [word, setWord] = React.useState('software');
-  const [associations, setAssociations] = React.useState(null);
-  const getAssociations = () => {
-    fetch('/api/associations/' + word)
-    .then(result => result.json())
-    .then(body => setAssociations(body))
+  const [responses, setResponses] = React.useState(null);
+
+  const getApi = () => {
+    axios.get('/api/recipes/' + word)
+    .then(response =>{
+      console.log(response.data.results);
+      setResponses(response.data.results);
+    })
     .catch(error => console.log(error))
   };
 
   return (
     <div className="app">
-      <h1>Word Associations!</h1>
+      <header>
+        <h1>Recipe Review App!</h1>
+      </header>
+      
       <input value={word} onChange={e => setWord(e.target.value)} />
-      <button onClick={getAssociations}>Search</button>
-
-      {associations && (
-        associations.length === 0
-          ? <p>No results</p>
-          : <div>
-             <p>Results! length = {associations.length}</p>
-             {associations.map((association,index) => (
-              <span key={index} style={{ fontSize: Math.pow(association.weight, 2) / 100 }}>
-                {association.item}
-                {' '}
-              </span>
+      <button onClick={getApi}>Search</button>
+    
+      {responses && (
+        responses.length === 0
+        ? <p>No results for {word}.</p>
+        : <div>
+          <ul>
+            {responses.map((response, index) => (
+              <div className=".recipeNodule" key={index}>
+                  <h2>{response.title}</h2>
+                  <img src={response.image} alt={response.title} />
+                </div>
             ))}
+            </ul>
           </div>
-      )}
+      )} 
     </div>
   );
 }
