@@ -9,15 +9,14 @@ const API_KEY = '01ca5b812aa74ef5a91015f1f7646bec';
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/api/recipes/:word', (req, res) => {
 	const word = req.params.word;
-	const request = unirest.get(`https://api.spoonacular.com/recipes/complexSearch?query=${word}&maxFat=25&number=5&apiKey=${API_KEY}`)
+	const request = unirest.get(`https://api.spoonacular.com/recipes/complexSearch?query=${word}&maxFat=25&number=10&apiKey=${API_KEY}`)
 	.then(response => {
+        // We just want the body of the response for this
         const results = response.body;
-		//const results = response.body.response[0].items || []; // grab array of results
-		console.log(results);
-		//res.json(results);
+		// Send the results
         res.send(results);
 	})
-	.catch(error => {
+	.catch(error => { //Catch any errors
 		console.log(`error=${error}`);
 		res.json({status:"Error", message: `${error}`});
 	});
