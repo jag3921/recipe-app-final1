@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001;
 const unirest = require("unirest");
 const path = require('path');
 const API_KEY = '01ca5b812aa74ef5a91015f1f7646bec';
-
+const dbURL = 'mongodb+srv://jacobUser:jacobPassword0@cluster0.tzvux.mongodb.net/RecipeApp';
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/api/recipes/:word', (req, res) => {

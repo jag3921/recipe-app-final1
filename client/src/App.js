@@ -5,7 +5,7 @@ import './App.css';
 // Get, Post, and Delete are made easier thanks to this framework.
 
 function App() {
-  const [word, setWord] = React.useState('software');
+  const [word, setWord] = React.useState('Search for food');
   const [responses, setResponses] = React.useState(null);
 // Get Api with additional parameters. Set the response variable to the api data.
   const getApi = () => {
@@ -23,7 +23,6 @@ function App() {
       <header>
         <h1>Recipe Review App!</h1>
       </header>
-
       <div className="inputContainer">
         <input value={word} onChange={e => setWord(e.target.value)} />
         <button onClick={getApi}>Search</button>
