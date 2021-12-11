@@ -8,9 +8,9 @@ body { background: #f7f7f7; }
 
 .resultsContainer {
   width: 100%;
+  margin: auto;
   display: flex;
-  flex-direction: row;
-  text-align: center;
+  flex-direction: column;
   flex-wrap: wrap;
   float: left;
 }
@@ -18,23 +18,36 @@ body { background: #f7f7f7; }
 .recipeNodule {
   padding: 5px;
   color: green;
-  max-width: 500px;
+  max-width: 400px;
   text-align: left;
 }
-
-
-h1 {
-  padding: 5%;
-  
+.logoImage {
+  width: 50px;
+  padding-top: 10px;
 }
+
+.navLink {
+  color: white;
+  padding: 2%;
+}
+h1 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+nav {
+  padding-bottom: 2%;
+  color: white;
+}
+
 p {
   padding-left: 15%;
 }
 header {
   
-  background-color: lightgreen;
+  background-color: #29b959;
   text-align: center;
   width: 100%;
+  color: white;
 }
 
 input,
@@ -47,6 +60,10 @@ button {
   font: inherit;
 }
 
+select {
+  padding: 11px;
+  margin-right: 5px;
+}
 input       { border-color: #888; text-align: left; }
 input:focus { border-color: #17f; }
 
