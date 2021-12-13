@@ -13,7 +13,7 @@ function UserReviews() {
             console.log(error);
         })
     }
-
+        
     return (<div>
         <button onClick={getReviews}>Display User Reviews</button>
         <div className="userReviews">

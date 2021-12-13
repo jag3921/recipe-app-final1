@@ -9,7 +9,6 @@ function LoginForm() {
             <label>Password: </label>
             <input type="text" required id="password" />
             <button >Submit</button>
-            <button onClick={sendData}>Test Users</button>
         </form>
         
     );
