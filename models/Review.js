@@ -13,6 +13,10 @@ const ReviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    recipeImg: {
+        type: String,
+        required: false
+    },
     likes: {
         type: Number, 
     },

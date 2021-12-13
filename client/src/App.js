@@ -7,6 +7,7 @@ import './App.css';
 import SignupPage from './signupPage';
 import RecipePage from './recipePage';
 import ReviewPage from './reviewPage';
+import UserReviews from './userReviews';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recipePage" element={<RecipePage />} />
         <Route path="/reviewRecipe" element={<ReviewPage />} />
+        <Route path="/reviews" element={<UserReviews />} />
         <Route path="/" element={<SearchPage />} />
       </Routes>
       </div> 

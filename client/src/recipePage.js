@@ -34,7 +34,7 @@ function RecipePage() {
     let navigate = useNavigate();
     function RouteToReview() {
         navigate('/reviewRecipe', {
-            state: {recipe: data.recipeName, id: id}
+            state: {recipe: data.recipeName, id: id, img: data.imgUrl}
         });
     }
     function CleanInstructions() {

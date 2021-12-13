@@ -57,10 +57,18 @@ body { background: #f7f7f7; }
 .sendReview {
   background-color: orange;
 }
+.userReviews{
+  margin: 5%;
+}
+.userReview {
+  border: solid 1px;
+  padding-left: 5%;
+}
 h1 {
   padding-left: 5%;
   padding-right: 5%;
 }
+
 nav {
   padding-bottom: 2%;
   margin-bottom: 5%;
