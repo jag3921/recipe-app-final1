@@ -26,9 +26,36 @@ body { background: #f7f7f7; }
   padding-top: 10px;
 }
 
+.instructions {
+  margin:4%;
+  padding: 1px;
+  background-color: gainsboro;
+}
+.instructions p {
+  margin-left: -10%;
+}
 .navLink {
   color: white;
   padding: 2%;
+  border-radius: 4px;
+}
+.toReview {
+  background-color: orange;
+  color: white;
+  padding: 2%;
+  border-radius: 10px;
+}
+.reviewSection {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.reviewBox {
+  background-color: whitesmoke;
+  margin: 2%;
+}
+.sendReview {
+  background-color: orange;
 }
 h1 {
   padding-left: 5%;
@@ -36,6 +63,7 @@ h1 {
 }
 nav {
   padding-bottom: 2%;
+  margin-bottom: 5%;
   color: white;
 }
 

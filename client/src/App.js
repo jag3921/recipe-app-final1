@@ -4,7 +4,9 @@ import LoginPage from './loginPage';
 import SearchPage from './SearchPage';
 import MainHeader from './components/MainHeader';
 import './App.css';
-
+import SignupPage from './signupPage';
+import RecipePage from './recipePage';
+import ReviewPage from './reviewPage';
 
 function App() {
 
@@ -16,7 +18,10 @@ function App() {
     <div className="app">
       <MainHeader />
       <Routes>
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/recipePage" element={<RecipePage />} />
+        <Route path="/reviewRecipe" element={<ReviewPage />} />
         <Route path="/" element={<SearchPage />} />
       </Routes>
       </div> 

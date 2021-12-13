@@ -1,30 +1,21 @@
 import React from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router';
 
-function recipeNodule(props) {
+function RecipeNodule(props) {
+    let navigate = useNavigate();
+    function RouteToRecipe() {
+        navigate('/recipePage', {
+            state: {id: props.obj.id}
+        });
+    }
     return (
     <div>
         <h2>{props.obj.title}</h2>
         <img src={props.obj.image} alt={props.obj.title} />
-        <button onClick={() =>{reviewAPI(props.obj.id)}} >Get Recipe!</button>
+        <button onClick={RouteToRecipe} >Get Recipe!</button>
     </div>
     )
 }
 
-function reviewAPI(id) {
-    let data;
-    axios.get('/api/review/' + id)
-    .then(response => {
-        console.log(response.data);
-        data = response.data;
-        return  (
-            <div className="app">
-                <p>{data.instructions}</p>
-            </div>
-        )
-    })
-    .catch(error => console.log(error));
 
-    
-}
-export default recipeNodule;
+export default RecipeNodule;
